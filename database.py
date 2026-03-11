@@ -6,7 +6,7 @@ import sqlite3
 import contextlib
 
 #-----------------------------------------------------------------------
-_DATANASE_URL = 'file:reg.sqlite'
+_DATABASE_URL = 'file:reg.sqlite'
 #-----------------------------------------------------------------------
 
 def get_overviews(reg_input):
