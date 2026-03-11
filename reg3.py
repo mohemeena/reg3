@@ -71,8 +71,7 @@ def classoverviews():
 #-----------------------------------------------------------------------
 # Course Details Page:
 #-----------------------------------------------------------------------
-@app.route('/', methods={'GET'})
-@app.route('/classdetails', methods={'GET'})
+@app.route('/regdetails?classid={{ course.classid }}', methods={'GET'})
 
 def classdetails():
 
@@ -81,7 +80,7 @@ def classdetails():
     details_output = database.get_details(classid)
 
     if details_output[0] is True:
-        html_code = flask.render_template('classdetails.html',
+        html_code = flask.render_template('regdetails.html',
             coursedetails = details_output[1])
         response = flask.make_response(html_code)
     
@@ -91,7 +90,6 @@ def classdetails():
         response = flask.make_response(html_code)
     
     return response
-
 
 #-----------------------------------------------------------------------
 # Helper Functions:
