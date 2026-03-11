@@ -3,7 +3,6 @@
 # Authors: Amel Osman & Mohemeen Ahmed
 #-----------------------------------------------------------------------
 
-import html
 import flask
 import database
 
