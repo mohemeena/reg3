@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Browser title -->
+        <title>
+            Registrar's Office Class Search
+        </title>
+
+    </head>
+    <body>
+        <!-- Registrar's Office Heading -->
+        {% include 'header.html'}
+
+        <!-- Search Form -->
+        <h2>Class Search</h2>
+
+        <form action="/classoverviews" method="get">
+            Dept:
+            <input id="deptInput" type="text" name="dept" value="{{dept}}" autofocus>
+            <br>
+            Course Number:
+            <input id="courseNumInput" type="text" name="number" value="{{number}}">
+            <br>
+            Area:   
+            <input id="areaInput" type="text" name="area" value="{{area}}">
+            <br>
+            Title:
+            <input id="titleInput" type="text" name="title" value="{{title}}">
+            <br>
+            <input id="submitButton" type="submit" value="Go">
+        </form>
+        <br>
+
+        <!-- If there are no courses: -->
+        {% if classes|length == 0: %}
+            (None)
+
+        <!-- Otherwise, print table -->
+        {% else %}
+            
+
+        <!-- Created by Mohemeen Ahmed & Amel Osman footer-->
+        {% include 'footer.html'}
+    </body>
+</html>
