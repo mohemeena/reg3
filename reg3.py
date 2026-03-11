@@ -16,7 +16,7 @@ app = flask.Flask(__name__, template_folder='.')
 #-----------------------------------------------------------------------
 @app.route('/', methods={'GET'})
 @app.route('/classoverviews', methods={'GET'})
-def classoverviews:
+def classoverviews():
 
     # Setting previous searches from cookies
     set_cookies(prev_dept)
@@ -59,23 +59,44 @@ def classoverviews:
             prev_area=prev_area, prev_title=prev_title,
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
-        return response
     
     else:
         html_code = flask.render_template('error.html',
             error_message = overviews_output[1])
         response = flask.make_response(html_code)
-        return response
+    
+    return response
 
 
 #-----------------------------------------------------------------------
 # Course Details Page:
 #-----------------------------------------------------------------------
+@app.route('/', methods={'GET'})
+@app.route('/classdetails', methods={'GET'})
+
+def classdetails():
+
+    classid = get_inquiry(classid)
+
+    details_output = database.get_details(classid)
+
+    if details_output[0] is True:
+        html_code = flask.render_template('classdetails.html',
+            coursedetails = details_output[1])
+        response = flask.make_response(html_code)
+    
+    else:
+        html_code = flask.render_template('error.html',
+            error_message = details_output[1])
+        response = flask.make_response(html_code)
+    
+    return response
 
 
 #-----------------------------------------------------------------------
 # Helper Functions:
 #-----------------------------------------------------------------------
+
 def set_cookies(arg):
     arg = flask.request.cookies.get('{arg}')
     if arg is None:
