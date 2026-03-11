@@ -69,7 +69,7 @@ def get_overviews(reg_input):
         "Please contact the system administrator."]
 
 
-def create_details(classid):
+def get_details(classid):
     """ Method that takes in an input of a desired course 
     and selects the details for those courses. After 
     selecting, outputs the formatted course details. """
