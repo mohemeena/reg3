@@ -37,9 +37,28 @@
 
         <!-- Otherwise, print table -->
         {% else %}
-            
+           <table id="overviewsTable">
+            <tr>
+                <th>ClassId</th>
+                <th>Dept</th>
+                <th>Course Number</th>
+                <th>Area</th>
+                <th>Title</th>
+            </tr>
 
+            {% for course in overviews %}
+            <tr>
+                <td><a href="/classdetails/{{ course.classid }}">{{ course.classid }}</a></td>
+                <td>{{ course.dept }}</td>
+                <td>{{ course.coursenum }}</td>
+                <td>{{ course.area }}</td>
+                <td>{{ course.title }}</td>
+            </tr>
+            {% endfor %}
+            </table>
+        {% endif %}
+        
         <!-- Created by Mohemeen Ahmed & Amel Osman footer-->
-        {% include 'footer.html'}
+        {% include 'footer.html' %}
     </body>
 </html>
