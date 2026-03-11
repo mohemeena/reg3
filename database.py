@@ -6,7 +6,7 @@ import sqlite3
 import contextlib
 
 #-----------------------------------------------------------------------
-_DATABASE_URL = 'file:reg.sqlite'
+DATABASE_URL = 'file:reg.sqlite'
 #-----------------------------------------------------------------------
 
 def get_overviews(reg_input):
@@ -69,7 +69,7 @@ def get_overviews(reg_input):
         "Please contact the system administrator."]
 
 
-def create_details(reg_input):
+def create_details(classid):
     """ Method that takes in an input of a desired course 
     and selects the details for those courses. After 
     selecting, outputs the formatted course details. """
