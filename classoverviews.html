@@ -38,13 +38,15 @@
         <!-- Otherwise, print table -->
         {% else %}
            <table id="overviewsTable">
-            <tr>
-                <th>ClassId</th>
-                <th>Dept</th>
-                <th>Course Number</th>
-                <th>Area</th>
-                <th>Title</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>ClassId</th>
+                    <th>Dept</th>
+                    <th>Course Number</th>
+                    <th>Area</th>
+                    <th>Title</th>
+                </tr>
+            </thead>
 
             {% for course in overviews %}
             <tr>
