@@ -101,19 +101,19 @@ def classdetails():
     # Getting previous searches from cookies
     prev_dept = flask.request.cookies.get('prev_dept')
     if prev_dept is None:
-        prev_dept = ''
+        prev_dept = flask.request.cookies.get('prev_dept','')
 
     prev_coursenum = flask.request.cookies.get('prev_coursenum')
     if prev_coursenum is None:
-        prev_coursenum = ''
+        prev_coursenum = flask.request.cookies.get('prev_coursenum','')
 
     prev_area = flask.request.cookies.get('prev_area')
     if prev_area is None:
-        prev_area = ''
+        prev_area = flask.request.cookies.get('prev_area','')
 
     prev_title = flask.request.cookies.get('prev_title')
     if prev_title is None:
-        prev_title = '' 
+        prev_title = flask.request.cookies.get('prev_title','')
 
     classid = flask.request.args.get('classid')
 
