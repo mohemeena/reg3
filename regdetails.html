@@ -14,7 +14,7 @@
         {% include 'header.html' %}
 
         <h2>Class Details</h2>
-        <table id="classDetailsTable">
+        <table id="classDetailsTable" border="1">
             <tbody>
                 <tr>
                     <td><strong>Class Id</strong></td>
@@ -44,7 +44,7 @@
             </table>
 
         <h2>Course Details</h2>
-        <table id="courseDetailsTable">
+        <table id="courseDetailsTable" border="1">
             <tbody>
                 <tr>
                     <td><strong>Course Id</strong></td>
@@ -52,7 +52,7 @@
                 </tr>
                 {% for dept_dict in coursedetails["deptcoursenums"] %}
                     <tr>
-                        <td>Dept and Number</td>
+                        <td><strong>Dept and Number</strong></td>
                         <td>{{dept_dict["dept"]}} {{dept_dict["coursenum"]}}</td>
                     </tr>
                 {% endfor %}
@@ -73,7 +73,7 @@
                     <td><strong>Prerequisites</strong></td>
                     <td>{{coursedetails["prerequisites"]}}</td>
                 </tr>
-                {% for prof in coursedetails["professors"] %} 
+                {% for prof in coursedetails["profnames"] %} 
                     <tr>
                         <td><strong>Professor</strong></td>
                         <td>{{prof}}</td>
