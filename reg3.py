@@ -17,23 +17,6 @@ app = flask.Flask(__name__, template_folder='.')
 @app.route('/classoverviews', methods={'GET'})
 def classoverviews():
 
-    # Setting previous searches from cookies
-    prev_dept = flask.request.cookies.get('prev_dept')
-    if prev_dept is None:
-        prev_dept = '(None)'
-
-    prev_coursenum = flask.request.cookies.get('prev_coursenum')
-    if prev_coursenum is None:
-        prev_coursenum = '(None)'
-
-    prev_area = flask.request.cookies.get('prev_area')
-    if prev_area is None:
-        prev_area = '(None)'
-
-    prev_title = flask.request.cookies.get('prev_title')
-    if prev_title is None:
-        prev_title = '(None)' 
-
     # Get the department inquiry
     dept = flask.request.args.get('dept')
     if dept is None:
@@ -89,8 +72,8 @@ def classoverviews():
 
     if overviews_output[0] is True:
         html_code = flask.render_template('classoverviews.html',
-            prev_dept=prev_dept, prev_coursenum=prev_coursenum,
-            prev_area=prev_area, prev_title=prev_title,
+            dept=prev_dept, coursenum=prev_coursenum,
+            area=prev_area, title=prev_title,
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
     
@@ -99,6 +82,12 @@ def classoverviews():
             error_message = overviews_output[1])
         response = flask.make_response(html_code)
     
+    # Set cookies
+    response.set_cookie('prev_dept', prev_dept)
+    response.set_cookie('prev_coursenum', prev_coursenum)
+    response.set_cookie('prev_area', prev_area)
+    response.set_cookie('prev_title', prev_title)
+
     return response
 
 
@@ -108,6 +97,23 @@ def classoverviews():
 @app.route('/regdetails', methods={'GET'})
 
 def classdetails():
+
+    # Getting previous searches from cookies
+    prev_dept = flask.request.cookies.get('prev_dept')
+    if prev_dept is None:
+        prev_dept = '(None)'
+
+    prev_coursenum = flask.request.cookies.get('prev_coursenum')
+    if prev_coursenum is None:
+        prev_coursenum = '(None)'
+
+    prev_area = flask.request.cookies.get('prev_area')
+    if prev_area is None:
+        prev_area = '(None)'
+
+    prev_title = flask.request.cookies.get('prev_title')
+    if prev_title is None:
+        prev_title = '(None)' 
 
     classid = flask.request.args.get('classid')
 
