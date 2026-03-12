@@ -12,6 +12,14 @@ def main():
         print(f'usage: {sys.argv[0]} port', file = sys.stderr)
         sys.exit(1)
 
+    parser = argparse.ArgumentParser(description="The registrar application")
+
+    parser.add_argument("-h", "--help",
+    help="show this help message and exit", default = "")
+    
+    parser.add_argument("port",type=int,
+    help=" the port at which the server is listening")
+
     try:
         port = int(sys.argv[1])
     except Exception:
