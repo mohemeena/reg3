@@ -16,12 +16,14 @@ def main():
 
     parser.add_argument("-h", "--help",
     help="show this help message and exit", default = "")
-    
+
     parser.add_argument("port",type=int,
     help=" the port at which the server is listening")
 
+    args = parser.parse_args()
+
     try:
-        port = int(sys.argv[1])
+        port = int(args.port)
     except Exception:
         print(f'{sys.argv[0]}: Port must be an integer.',
             file = sys.stderr)
