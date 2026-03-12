@@ -124,7 +124,6 @@ def classdetails():
             error_message='missing classid'
         )
         response = flask.make_response(html_code)
-        return response
     
     # Check if classid not integer
     try:
@@ -135,7 +134,6 @@ def classdetails():
             error_message='non-integer classid'
         )
         response = flask.make_response(html_code)
-        return response
 
     details_output = database.get_details(classid)
 
