@@ -10,10 +10,6 @@ import argparse
 def main():
     
     parser = argparse.ArgumentParser(description="The registrar application")
-
-    parser.add_argument("-h", "--help",
-    help="show this help message and exit", default = "")
-
     parser.add_argument("port",type=int,
     help=" the port at which the server is listening")
 
