@@ -76,6 +76,14 @@ def classdetails():
 
     classid = get_inquiry(classid)
 
+    if classid is None or classid == ' ':
+        html_code = flask.render_template(
+            'error.html',
+            error_message=f'no class with class id {classid} found'
+        )
+        response = flask.make_response(html_code)
+        return response
+
     details_output = database.get_details(classid)
 
     if details_output[0] is True:
