@@ -54,7 +54,6 @@ def classoverviews():
     title = flask.request.args.get('title')
     if title is None:
         title = ''
-    title = title.strip()
     
     if title == '':
         prev_title = ''
