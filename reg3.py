@@ -18,10 +18,21 @@ app = flask.Flask(__name__, template_folder='.')
 def classoverviews():
 
     # Setting previous searches from cookies
-    set_cookies(prev_dept)
-    set_cookies(prev_coursenum)
-    set_cookies(prev_area)
-    set_cookies(prev_title)
+    prev_dept = flask.request.cookies.get('prev_dept')
+    if prev_dept is None:
+        prev_dept = '(None)'
+
+    prev_coursenum = flask.request.cookies.get('prev_coursenum')
+    if prev_coursenum is None:
+        prev_coursenum = '(None)'
+
+    prev_area = flask.request.cookies.get('prev_area')
+    if prev_area is None:
+        prev_area = '(None)'
+
+    prev_title = flask.request.cookies.get('prev_title')
+    if prev_title is None:
+        prev_title = '(None)' 
 
     # Get the department inquiry
     dept = get_inquiry(dept)

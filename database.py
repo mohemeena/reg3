@@ -4,6 +4,7 @@
 #-----------------------------------------------------------------------
 import sqlite3
 import contextlib
+import sys
 
 #-----------------------------------------------------------------------
 DATABASE_URL = 'file:reg.sqlite'
@@ -166,7 +167,6 @@ def get_details(classid):
                 reg_output = [True, course_details]
                 return reg_output
 
-    # PRINT ERROR PAGE! MAKE HTML PAGE
     except IndexError:
         return [False, f"No class with class id {classid} exists"]
 
