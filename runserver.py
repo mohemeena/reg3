@@ -8,6 +8,7 @@ import reg3
 import argparse
 
 def main():
+    
     parser = argparse.ArgumentParser(description="The registrar application")
 
     parser.add_argument("-h", "--help",
