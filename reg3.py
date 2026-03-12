@@ -117,10 +117,22 @@ def classdetails():
 
     classid = flask.request.args.get('classid')
 
-    if classid is None or classid == ' ':
+    # Handling missing classid error
+    if classid is None or classid.strip() == ' ':
         html_code = flask.render_template(
             'error.html',
-            error_message=f'no class with classid {classid} found',
+            error_message='missing classid'
+        )
+        response = flask.make_response(html_code)
+        return response
+    
+    # Check if classid not integer
+    try:
+        int(classid)
+    except Exception:
+        html_code = flask.render_template(
+            'error.html',
+            error_message='non-integer classid'
         )
         response = flask.make_response(html_code)
         return response
@@ -136,7 +148,7 @@ def classdetails():
     
     else:
         html_code = flask.render_template('error.html',
-            error_message = details_output[1])
+            error_message = f'no class with classid {classid} exists')
         response = flask.make_response(html_code)
     
     return response
