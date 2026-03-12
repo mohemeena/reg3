@@ -13,6 +13,8 @@
         <!-- Registrar's Office Heading -->
         {% include 'header.html' %}
 
+        <hr>
+
         <h2>Class Details</h2>
         <table id="classDetailsTable" border="1">
             <tbody>
@@ -71,7 +73,7 @@
                 </tr>
                 <tr>
                     <td><strong>Prerequisites</strong></td>
-                    <td>{{coursedetails["prerequisites"]}}</td>
+                    <td>{{coursedetails["prereqs"]}}</td>
                 </tr>
                 {% for prof in coursedetails["profnames"] %} 
                     <tr>
@@ -81,11 +83,14 @@
                 {% endfor %}
             </tbody>
             </table>
+            <hr>
 
         <!-- Return to previous search page -->
         <p>Click here to do <a href="/classoverviews">another class search</a></p>
+        <hr>
 
         <!-- Created by Mohemeen Ahmed & Amel Osman footer-->
         {% include 'footer.html' %}
+        <hr>
     </body>
 </html>
