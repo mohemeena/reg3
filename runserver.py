@@ -8,11 +8,6 @@ import reg3
 import argparse
 
 def main():
-    
-    if len(sys.argv) != 2:
-        print(f'usage: {sys.argv[0]} port', file = sys.stderr)
-        sys.exit(1)
-
     parser = argparse.ArgumentParser(description="The registrar application")
 
     parser.add_argument("-h", "--help",
