@@ -22,7 +22,7 @@ def classoverviews():
     if dept is None:
         dept = ''
     dept = dept.strip()
-    
+
     if dept == '':
         prev_dept = ''
     else:
@@ -33,7 +33,7 @@ def classoverviews():
     if coursenum is None:
         coursenum = ''
     coursenum = coursenum.strip()
-    
+
     if coursenum == '':
         prev_coursenum = ''
     else:
@@ -44,7 +44,7 @@ def classoverviews():
     if area is None:
         area = ''
     area = area.strip()
-    
+
     if area == '':
         prev_area = ''
     else:
@@ -54,7 +54,7 @@ def classoverviews():
     title = flask.request.args.get('title')
     if title is None:
         title = ''
-    
+
     if title == '':
         prev_title = ''
     else:
@@ -75,12 +75,12 @@ def classoverviews():
             area=prev_area, title=prev_title,
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
-    
+
     else:
         html_code = flask.render_template('error.html',
             error_message = overviews_output[1])
         response = flask.make_response(html_code)
-    
+
     # Set cookies
     response.set_cookie('prev_dept', prev_dept)
     response.set_cookie('prev_coursenum', prev_coursenum)
@@ -124,7 +124,7 @@ def classdetails():
         )
         response = flask.make_response(html_code)
         return response
-    
+
     # Check if classid not integer
     try:
         int(classid)
@@ -144,11 +144,10 @@ def classdetails():
             dept=prev_dept, coursenum=prev_coursenum,
             area=prev_area, title=prev_title)
         response = flask.make_response(html_code)
-    
+
     else:
         html_code = flask.render_template('error.html',
             error_message = f'no class with classid {classid} exists')
         response = flask.make_response(html_code)
-    
-    return response
 
+    return response

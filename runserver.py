@@ -4,12 +4,13 @@
 #-----------------------------------------------------------------------
 
 import sys
-import reg3
 import argparse
+import reg3
 
 def main():
-    
-    parser = argparse.ArgumentParser(description="The registrar application")
+
+    parser = argparse.ArgumentParser(description=
+    "The registrar application")
     parser.add_argument("port",type=int,
     help=" the port at which the server is listening")
 
