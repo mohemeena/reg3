@@ -22,24 +22,44 @@ def classoverviews():
     if dept is None:
         dept = ''
     dept = dept.strip()
+    
+    if dept == '':
+        prev_dept = ''
+    else:
+        prev_dept = dept
 
     # Get the course number inquiry
     coursenum = flask.request.args.get('coursenum')
     if coursenum is None:
         coursenum = ''
     coursenum = coursenum.strip()
+    
+    if coursenum == '':
+        prev_coursenum = ''
+    else:
+        prev_coursenum = coursenum
 
     # Get the area inquiry
     area = flask.request.args.get('area')
     if area is None:
         area = ''
     area = area.strip()
+    
+    if area == '':
+        prev_area = ''
+    else:
+        prev_area = area
 
     # Get the title inquiry
     title = flask.request.args.get('title')
     if title is None:
         title = ''
     title = title.strip()
+    
+    if title == '':
+        prev_title = ''
+    else:
+        prev_title = title
 
     query = {
         'dept': dept,
@@ -56,6 +76,7 @@ def classoverviews():
             area=prev_area, title=prev_title,
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
+    
     else:
         html_code = flask.render_template('error.html',
             error_message = overviews_output[1])
@@ -79,9 +100,20 @@ def classdetails():
 
     # Getting previous searches from cookies
     prev_dept = flask.request.cookies.get('prev_dept')
+    if prev_dept is None:
+        prev_dept = ''
+
     prev_coursenum = flask.request.cookies.get('prev_coursenum')
+    if prev_coursenum is None:
+        prev_coursenum = ''
+
     prev_area = flask.request.cookies.get('prev_area')
+    if prev_area is None:
+        prev_area = ''
+
     prev_title = flask.request.cookies.get('prev_title')
+    if prev_title is None:
+        prev_title = '' 
 
     classid = flask.request.args.get('classid')
 
@@ -99,6 +131,7 @@ def classdetails():
         html_code = flask.render_template('regdetails.html',
             coursedetails = details_output[1])
         response = flask.make_response(html_code)
+    
     else:
         html_code = flask.render_template('error.html',
             error_message = details_output[1])
