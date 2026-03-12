@@ -92,6 +92,93 @@ def main():
             'title':'intro'})
 
         # Add more tests here.
+       
+        # assignment spec tests
+        run_test(server_url, browser_process,
+            {'title':'Independent Study'})
+
+        run_test(server_url, browser_process,
+            {'title':'Independent Study '})
+
+        run_test(server_url, browser_process,
+            {'title':'Independent Study  '})
+
+        run_test(server_url, browser_process,
+            {'title':' Independent Study'})
+
+        run_test(server_url, browser_process,
+            {'title':'  Independent Study'})
+
+        run_test(server_url, browser_process,
+            {'dept':'COS', 'coursenum':'3'})
+        
+        run_test(server_url, browser_process,
+            {'area':'qr'})
+        
+        run_test(server_url, browser_process,
+            {'area':'Qr'})
+        
+        run_test(server_url, browser_process,
+            {'area':'-a '})
+        
+        run_test(server_url, browser_process,
+            {'area':'qr st'})
+        
+        run_test(server_url, browser_process,
+            {'area':' '})
+        
+        run_test(server_url, browser_process,
+            {'area':'qr', 'dept': ''})
+        
+        run_test(server_url, browser_process,
+            {'area':'', 'dept': 'cos'})
+        
+        run_test(server_url, browser_process,
+            {'dept': '-x'})
+
+        run_test(server_url, browser_process,
+            {'dept':'cos', 'area':'qr'})
+
+        #long titles
+        run_test(server_url, browser_process,
+            {'title':'Studies in Religion and Philosophy: Religion'
+            ' & the Fragility of American Democracy: Emerson & Baldwin'})
+
+        run_test(server_url, browser_process,
+            {'title':'African American History from '
+            'Reconstruction to'})
+
+        # wildcard characters 
+        run_test(server_url, browser_process,
+            {'title':'C_S'})
+
+        run_test(server_url, browser_process,
+            {'title':'c%s'})
+
+        run_test(server_url, browser_process,
+            {'title':'-c'})
+
+        # blank input test
+        run_test(server_url, browser_process, {})
+
+        # empty / space fields
+        run_test(server_url, browser_process,
+            {'dept':' '})
+
+        run_test(server_url, browser_process,
+            {'coursenum':' '})
+
+        run_test(server_url, browser_process,
+            {'title':' '})
+
+        # invalid formatting
+        run_test(server_url, browser_process,
+            {'coursenum':'hi'})
+
+        run_test(server_url, browser_process,
+            {'coursenum':'9 8'})
+
+
 
 if __name__ == '__main__':
     main()
