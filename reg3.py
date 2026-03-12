@@ -118,7 +118,7 @@ def classdetails():
     classid = flask.request.args.get('classid')
 
     # Handling missing classid error
-    if classid is None or classid.strip() == '':
+    if classid is None or classid == '':
         html_code = flask.render_template(
             'error.html',
             error_message='missing classid'
