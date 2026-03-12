@@ -50,15 +50,16 @@
                     <td><strong>Course Id</strong></td>
                     <td>{{coursedetails["courseid"]}}</td>
                 </tr>
-                { % for dept_dict in coursedetails["deptcoursenums"] % }
+                {% for dept_dict in coursedetails["deptcoursenums"] %}
                     <tr>
                         <td>Dept and Number</td>
                         <td>{{dept_dict["dept"]}} {{dept_dict["coursenum"]}}</td>
                     </tr>
-                { % endfor % }
+                {% endfor %}
                 <tr>
                     <td><strong>Area</strong></td>
                     <td>{{coursedetails["area"]}}</td>
+                    '
                 </tr>
                 <tr>
                     <td><strong>Title</strong></td>
@@ -66,18 +67,18 @@
                 </tr>
                 <tr>
                     <td><strong>Description</strong></td>
-                    <td>{{coursedetails["description"]}}</td>
+                    <td>{{coursedetails["descrip"]}}</td>
                 </tr>
                 <tr>
                     <td><strong>Prerequisites</strong></td>
                     <td>{{coursedetails["prerequisites"]}}</td>
                 </tr>
-                { % for prof in coursedetails["professors"] % } 
+                {% for prof in coursedetails["professors"] %} 
                     <tr>
                         <td><strong>Professor</strong></td>
                         <td>{{prof}}</td>
                     </tr>
-                { % endfor % }
+                {% endfor %}
             </tbody>
             </table>
 
