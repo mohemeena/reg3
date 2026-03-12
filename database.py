@@ -19,6 +19,12 @@ def get_overviews(reg_input):
         isolation_level=None, uri=True) as connection:
 
             with contextlib.closing(connection.cursor()) as cursor:
+                
+                # Ensuring wildcard characters are treated ordinarily
+                title = reg_input["title"]
+                title = title.replace("\\", "\\\\")
+                title = title.replace("%", "\\%")
+                title = title.replace("_", "\\_")
 
                 # Create a prepared statement and substitute values.
                 stmt_str = '''
@@ -35,7 +41,7 @@ def get_overviews(reg_input):
 
                 cursor.execute(stmt_str, [f'%{reg_input["dept"]}%',
                 f'%{reg_input["coursenum"]}%', f'%{reg_input["area"]}%',
-                f'%{reg_input["title"]}%'])
+                f'%{title}%'])
 
                 table = cursor.fetchall()
                 overviews_list = []
