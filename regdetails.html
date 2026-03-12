@@ -50,10 +50,10 @@
                     <td><strong>Course Id</strong></td>
                     <td>{{coursedetails["courseid"]}}</td>
                 </tr>
-                { % for dandn in coursedetails["deptcoursenums"] % }
+                { % for dept_dict in coursedetails["deptcoursenums"] % }
                     <tr>
                         <td>Dept and Number</td>
-                        <td>{{dandn["dept"]}} {{dandn["coursenum"]}}</td>
+                        <td>{{dept_dict["dept"]}} {{dept_dict["coursenum"]}}</td>
                     </tr>
                 { % endfor % }
                 <tr>
