@@ -168,7 +168,7 @@ def get_details(classid):
                 return reg_output
 
     except IndexError:
-        return [False, f"No class with class id {classid} exists"]
+        return [False, f"no class with classid {classid} exists"]
 
     except sqlite3.OperationalError as dbnopen:
         print(f'{sys.argv[0]}: unable to open database file: {dbnopen}',

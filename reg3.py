@@ -120,7 +120,7 @@ def classdetails():
     if classid is None or classid == ' ':
         html_code = flask.render_template(
             'error.html',
-            error_message=f'no class with class id {classid} found',
+            error_message=f'no class with classid {classid} found',
         )
         response = flask.make_response(html_code)
         return response
