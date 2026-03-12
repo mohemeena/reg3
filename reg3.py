@@ -20,7 +20,7 @@ def classoverviews():
     # Get the department inquiry
     dept = flask.request.args.get('dept')
     if dept is None:
-        dept = ''
+        dept = flask.request.cookies.get('prev_title','')
     dept = dept.strip()
     
     if dept == '':
@@ -31,7 +31,7 @@ def classoverviews():
     # Get the course number inquiry
     coursenum = flask.request.args.get('coursenum')
     if coursenum is None:
-        coursenum = ''
+        coursenum = flask.request.cookies.get('prev_title','')
     coursenum = coursenum.strip()
     
     if coursenum == '':
@@ -42,7 +42,7 @@ def classoverviews():
     # Get the area inquiry
     area = flask.request.args.get('area')
     if area is None:
-        area = ''
+        area = flask.request.cookies.get('prev_title','')
     area = area.strip()
     
     if area == '':
@@ -53,7 +53,7 @@ def classoverviews():
     # Get the title inquiry
     title = flask.request.args.get('title')
     if title is None:
-        title = ''
+        title = flask.request.cookies.get('prev_title','')
     title = title.strip()
     
     if title == '':
