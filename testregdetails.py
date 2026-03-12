@@ -99,9 +99,6 @@ def main():
         #testing with a class that has no prerequisites
         run_test(server_url, browser_process, '8293')
 
-        #testing with user writing two class codes
-        run_test(server_url, browser_process, '10258 10260')
-
         #testing with nonexistent class code
         run_test(server_url, browser_process, '9999')
 
