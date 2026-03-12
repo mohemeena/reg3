@@ -109,7 +109,7 @@ def classoverviews():
 
 def classdetails():
 
-    classid = get_inquiry(classid)
+    classid = flask.request.args.get('classid')
 
     if classid is None or classid == ' ':
         html_code = flask.render_template(
