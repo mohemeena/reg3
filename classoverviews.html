@@ -16,19 +16,38 @@
         <hr>
 
         <form action="/classoverviews" method="get">
-            Dept:
-            <input id="deptInput" type="text" name="dept" value="{{dept}}" autofocus>
-            <br>
-            Number:
-            <input id="coursenumInput" type="text" name="coursenum" value="{{coursenum}}">
-            <br>
-            Area:   
-            <input id="areaInput" type="text" name="area" value="{{area}}">
-            <br>
-            Title:
-            <input id="titleInput" type="text" name="title" value="{{title}}">
-            <br>
-            <input id="submitButton" type="submit" value="Go">
+        <table>
+            <tr>
+                <td>Dept:</td>
+                <td>
+                <input id="deptInput" type="text" name="dept" value="{{dept}}" autofocus>
+                </td>
+            </tr>
+            <tr>
+               <td>Number:</td> 
+               <td>
+               <input id="coursenumInput" type="text" name="coursenum" value="{{coursenum}}">
+               </td>
+            </tr>
+            <tr>
+                <td>Area:</td>
+                <td>
+                <input id="areaInput" type="text" name="area" value="{{area}}">
+                </td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td>
+                <input id="titleInput" type="text" name="title" value="{{title}}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                <input id="submitButton" type="submit" value="Go">
+                </td>
+            </tr>
+        </table>
         </form>
         <br>
         <hr>
