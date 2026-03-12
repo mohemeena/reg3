@@ -99,7 +99,6 @@ def classdetails():
         html_code = flask.render_template('regdetails.html',
             coursedetails = details_output[1])
         response = flask.make_response(html_code)
-    
     else:
         html_code = flask.render_template('error.html',
             error_message = details_output[1])
