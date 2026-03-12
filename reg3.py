@@ -120,7 +120,7 @@ def classdetails():
     if classid is None or classid == ' ':
         html_code = flask.render_template(
             'error.html',
-            error_message=f'no class with class id {classid} found'
+            error_message=f'no class with class id {classid} found',
         )
         response = flask.make_response(html_code)
         return response
@@ -129,7 +129,9 @@ def classdetails():
 
     if details_output[0] is True:
         html_code = flask.render_template('regdetails.html',
-            coursedetails = details_output[1])
+            coursedetails = details_output[1],
+            dept=prev_dept, coursenum=prev_coursenum,
+            area=prev_area, title=prev_title)
         response = flask.make_response(html_code)
     
     else:
