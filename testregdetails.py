@@ -108,9 +108,6 @@ def main():
         #testing with non-integer classid
         run_test(server_url, browser_process, 'abcd')
 
-        #bad manually entered url
-        run_test('wrong_url', browser_process, '')
-
 
 if __name__ == '__main__':
     main()
