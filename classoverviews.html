@@ -13,6 +13,7 @@
 
         <!-- Search Form -->
         <h2>Class Search</h2>
+        <hr>
 
         <form action="/classoverviews" method="get">
             Dept:
@@ -30,6 +31,7 @@
             <input id="submitButton" type="submit" value="Go">
         </form>
         <br>
+        <hr>
 
         <!-- If there are no courses: -->
         {% if overviews|length == 0: %}
@@ -37,12 +39,12 @@
 
         <!-- Otherwise, print table -->
         {% else %}
-            <table id="overviewsTable">
+            <table id="overviewsTable" border="5">
             <thead>
                 <tr>
                     <td>ClassId</td>
                     <td>Dept</td>
-                    <td>Course Number</td>
+                    <td>Number</td>
                     <td>Area</td>
                     <td>Title</td>
                 </tr>
