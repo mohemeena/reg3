@@ -56,7 +56,6 @@ def classoverviews():
             area=prev_area, title=prev_title,
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
-    
     else:
         html_code = flask.render_template('error.html',
             error_message = overviews_output[1])
