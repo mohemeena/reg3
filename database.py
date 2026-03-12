@@ -20,7 +20,7 @@ def get_overviews(reg_input):
         isolation_level=None, uri=True) as connection:
 
             with contextlib.closing(connection.cursor()) as cursor:
-                
+
                 # Ensuring wildcard characters are treated ordinarily
                 title = reg_input["title"]
                 title = title.replace("\\", "\\\\")
