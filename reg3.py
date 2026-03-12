@@ -105,7 +105,7 @@ def classoverviews():
 #-----------------------------------------------------------------------
 # Course Details Page:
 #-----------------------------------------------------------------------
-@app.route('/regdetails?classid={{course.classid}}', methods={'GET'})
+@app.route('/regdetails', methods={'GET'})
 
 def classdetails():
 
