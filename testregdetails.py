@@ -78,5 +78,39 @@ def main():
 
         # Add more tests here.
 
+        #running with missing classid
+        run_test(server_url, browser_process, '')
+
+        #testing long description
+        run_test(server_url, browser_process, '8749')
+
+        #testing multiple professors
+        run_test(server_url, browser_process, '8749')
+
+        #testing no professors
+        run_test(server_url, browser_process, '10030')
+
+        #testing multiple cross-listed classes
+        run_test(server_url, browser_process, '8749')
+
+        #testing with a lot of cross-listings and professors
+        run_test(server_url, browser_process, '9032')
+
+        #testing with a class that has no prerequisites
+        run_test(server_url, browser_process, '8293')
+
+        #testing with user writing two class codes
+        run_test(server_url, browser_process, '10258 10260')
+
+        #testing with nonexistent class code
+        run_test(server_url, browser_process, '9999')
+
+        #testing with non-integer classid
+        run_test(server_url, browser_process, 'abcd')
+
+        #bad manually entered url
+        run_test('wrong_url', browser_process, '')
+
+
 if __name__ == '__main__':
     main()
