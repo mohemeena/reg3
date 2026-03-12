@@ -19,7 +19,7 @@
             Dept:
             <input id="deptInput" type="text" name="dept" value="{{dept}}" autofocus>
             <br>
-            Course Number:
+            Number:
             <input id="coursenumInput" type="text" name="coursenum" value="{{coursenum}}">
             <br>
             Area:   
@@ -39,14 +39,14 @@
 
         <!-- Otherwise, print table -->
         {% else %}
-            <table id="overviewsTable" border="5">
+            <table id="overviewsTable" border="1" cellpadding="5" cellspacing="5">
             <thead>
                 <tr>
-                    <td>ClassId</td>
-                    <td>Dept</td>
-                    <td>Number</td>
-                    <td>Area</td>
-                    <td>Title</td>
+                    <td><b>ClassId</b></td>
+                    <td><b>Dept</b></td>
+                    <td><b>Num</b></td>
+                    <td><b>Area</b></td>
+                    <td><b>Title</b></td>
                 </tr>
             </thead>
             <tbody>
