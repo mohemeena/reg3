@@ -35,24 +35,48 @@ def classoverviews():
         prev_title = '(None)' 
 
     # Get the department inquiry
-    dept = get_inquiry(dept)
+    dept = flask.request.args.get('dept')
+    if dept is None:
+        dept = ''
+    dept = dept.strip()
+    
     if dept == '':
         prev_dept = '(None)'
+    else:
+        prev_dept = dept
 
     # Get the course number inquiry
-    coursenum = get_inquiry(coursenum)
+    coursenum = flask.request.args.get('coursenum')
+    if coursenum is None:
+        coursenum = ''
+    coursenum = coursenum.strip()
+    
     if coursenum == '':
         prev_coursenum = '(None)'
+    else:
+        prev_coursenum = coursenum
 
     # Get the area inquiry
-    area = get_inquiry(area)
+    area = flask.request.args.get('area')
+    if area is None:
+        area = ''
+    area = area.strip()
+    
     if area == '':
         prev_area = '(None)'
+    else:
+        prev_area = area
 
     # Get the title inquiry
-    title = get_inquiry(title)
+    title = flask.request.args.get('title')
+    if title is None:
+        title = ''
+    title = title.strip()
+    
     if title == '':
         prev_title = '(None)'
+    else:
+        prev_title = title
 
     query = {
         'dept': dept,
@@ -109,20 +133,3 @@ def classdetails():
     
     return response
 
-#-----------------------------------------------------------------------
-# Helper Functions:
-#-----------------------------------------------------------------------
-
-def set_cookies(arg):
-    arg = flask.request.cookies.get('{arg}')
-    if arg is None:
-        arg = '(None)'
-
-def get_inquiry(arg):
-    arg = flask.request.args.get('{arg}')
-    if arg is None:
-        arg = ''
-    arg = arg.strip()
-    return arg
-
-#-----------------------------------------------------------------------
