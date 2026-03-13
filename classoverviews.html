@@ -65,7 +65,7 @@
             <tbody>
                 {% for course in overviews %}
                 <tr>
-                    <td><a href="/regdetails?classid={{ course['classid']}}">{{ ['course.classid'] }}</a></td>
+                    <td><a href="/regdetails?classid={{ course.classid }}">{{ course.classid }}</a></td>
                     <td>{{course["dept"]}}</td>
                     <td>{{course["coursenum"]}}</td>
                     <td>{{course["area"]}}</td>
