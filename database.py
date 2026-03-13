@@ -2,6 +2,8 @@
 # database.py
 # Author: Amel Osman & Mohemeen Ahmed
 #-----------------------------------------------------------------------
+""" Database program that communicates with the reg3.py program to 
+extract and output relevant class overviews or details. """
 import sqlite3
 import contextlib
 import sys
@@ -46,7 +48,8 @@ def get_overviews(reg_input):
 
                 table = cursor.fetchall()
                 overviews_list = []
-
+                
+                # Creating proper output
                 for row in table:
                     course_overview = {
                         'classid': row[0],
@@ -62,7 +65,7 @@ def get_overviews(reg_input):
             return reg_output
 
 
-    # PRINT ERROR PAGE! MAKE HTML PAGE
+    # Error messages for our Error HTML Page
     except sqlite3.OperationalError as dbnopen:
         print(f'{sys.argv[0]}: unable to open database file: {dbnopen}',
         file=sys.stderr)
