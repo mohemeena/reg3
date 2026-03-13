@@ -2,13 +2,14 @@
 # runserver.py
 # Author: Mohemeen Ahmed and Amel Osman
 #-----------------------------------------------------------------------
+""" Server program that takes in command line arguments and begins
+our flask program. """
 
 import sys
 import argparse
 import reg3
 
 def main():
-
     parser = argparse.ArgumentParser(description=
     "The registrar application")
     parser.add_argument("port",type=int,
