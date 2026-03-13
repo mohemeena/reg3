@@ -48,7 +48,7 @@ def get_overviews(reg_input):
 
                 table = cursor.fetchall()
                 overviews_list = []
-                
+
                 # Creating proper output
                 for row in table:
                     course_overview = {
