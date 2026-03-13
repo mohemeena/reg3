@@ -21,7 +21,6 @@ def classoverviews():
     dept = flask.request.args.get('dept')
     if dept is None:
         dept = ''
-    dept = dept.strip()
 
     if dept == '':
         prev_dept = ''
@@ -32,7 +31,6 @@ def classoverviews():
     coursenum = flask.request.args.get('coursenum')
     if coursenum is None:
         coursenum = ''
-    coursenum = coursenum.strip()
 
     if coursenum == '':
         prev_coursenum = ''
@@ -43,7 +41,6 @@ def classoverviews():
     area = flask.request.args.get('area')
     if area is None:
         area = ''
-    area = area.strip()
 
     if area == '':
         prev_area = ''

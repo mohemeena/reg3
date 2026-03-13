@@ -177,8 +177,6 @@ def main():
 
         run_test(server_url, browser_process,
             {'coursenum':'9 8'})
-
-
-
+        
 if __name__ == '__main__':
     main()
