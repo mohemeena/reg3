@@ -2,7 +2,9 @@
 # reg3.py
 # Authors: Amel Osman & Mohemeen Ahmed
 #-----------------------------------------------------------------------
-
+""" Flask program that communicates with database.py to import class
+overviews and details, and outputs them to be displayed on the proper
+HTML file. """
 import flask
 import database
 
@@ -16,6 +18,8 @@ app = flask.Flask(__name__, template_folder='.')
 @app.route('/', methods={'GET'})
 @app.route('/classoverviews', methods={'GET'})
 def classoverviews():
+    """ Method that extracts overviews from the database and
+    sends to the classoverviews.html file to be displayed. """
 
     # Get the department inquiry
     dept = flask.request.args.get('dept')
@@ -66,6 +70,7 @@ def classoverviews():
 
     overviews_output = database.get_overviews(query)
 
+    # If the database query was successful, display with HTML
     if overviews_output[0] is True:
         html_code = flask.render_template('classoverviews.html',
             dept=prev_dept, coursenum=prev_coursenum,
@@ -73,6 +78,7 @@ def classoverviews():
             overviews = overviews_output[1])
         response = flask.make_response(html_code)
 
+    # If it was not successful, send to the error page
     else:
         html_code = flask.render_template('error.html',
             error_message = overviews_output[1])
@@ -93,6 +99,8 @@ def classoverviews():
 @app.route('/regdetails', methods={'GET'})
 
 def classdetails():
+    """ Method that extracts classdetails from the database
+    and sends to the regdetails.html file to be displayed. """
 
     # Getting previous searches from cookies
     prev_dept = flask.request.cookies.get('prev_dept')
@@ -135,6 +143,7 @@ def classdetails():
 
     details_output = database.get_details(classid)
 
+    # If the database query was successful, display with HTML
     if details_output[0] is True:
         html_code = flask.render_template('regdetails.html',
             coursedetails = details_output[1],
@@ -142,6 +151,7 @@ def classdetails():
             area=prev_area, title=prev_title)
         response = flask.make_response(html_code)
 
+    # If it was not successful, send to the error page
     else:
         html_code = flask.render_template('error.html',
             error_message = f'no class with classid {classid} exists')
