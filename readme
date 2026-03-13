@@ -1,13 +1,34 @@
 Your full name and netid and your teammate's full name and netid.
 
 [Enter your reply here.]
+Amel Osman – ao5729
+Mohemeen Ahmed – ma2244
 
 A paragraph describing your contribution, and another paragraph
 describing your teammate's contribution. Please be thorough; we're
 looking for two substantial paragraphs, not a sentence or two. (If
 you worked alone, then you should skip this section.)
 
-[Enter your reply here.]
+Amel Osman:
+In this assignment, Mohemeen and I tried our best to split the
+work, thinking, and programming equally. For example, I took control
+of programming the runserver.py program, while Mohemeen helped me
+adapt the example from class to our program. Additionally, I took
+control of adapting our reg2 programs to the database.py file,
+ensuring we had a proper database to pull data from. I also led
+the programming of most of reg3.py, however all of these programs
+required thinking on both of our parts, as we each contributed
+to every aspect of the assignment so that we could understand
+each file. While I enjoyed diving more into the Python files,
+Mohemeen took control of programming the HTML files,
+including classoverviews.html, regdetails.html, and error.html. 
+While she took control of the error handling HTML page, I 
+focused on the error handling aspect on the Python side in reg3.py. 
+Additionally, while I led the testing of regdetails, Mohemeen 
+implemented the testing of regoverviews.py. We each worked on fixing
+bugs together as a team equally. All in all, we each were present 
+in each aspect of the assignment, it was merely a matter of who 
+programmed when.
 
 A description of the help that you received from people other
 than the course instructors while doing the assignment. Your
@@ -58,11 +79,11 @@ doing the assignment. Your description must consist of lines of the
 form "aspect of your assignment solution: generative AI engines used."
 Write "None" to indicate that you received no help from generative AI.
 
-[Enter your reply here.]
+None
 
 An indication of how much time you spent doing the assignment.
 
-[Enter your reply here.]
+10 hours
 
 Your assessment of the assignment: Did it help you to learn? What did
 it help you to learn? Do you have any suggestions for improvement? Etc.
