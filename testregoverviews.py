@@ -141,12 +141,11 @@ def main():
 
         #long titles
         run_test(server_url, browser_process,
-            {'title':'Studies in Religion and Philosophy: Religion'
-            ' & the Fragility of American Democracy: Emerson & Baldwin'})
+            {'title':'Studies in Religion and Philosophy: Religion & the Fragility of American Democracy: Emerson & Baldwin'})
 
+        #testing cross-referenced departments
         run_test(server_url, browser_process,
-            {'title':'African American History from '
-            'Reconstruction to'})
+            {'title':'African American History from Reconstruction to'})
 
         # wildcard characters 
         run_test(server_url, browser_process,
