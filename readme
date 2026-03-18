@@ -30,6 +30,24 @@ bugs together as a team equally. All in all, we each were present
 in each aspect of the assignment, it was merely a matter of who 
 programmed when.
 
+Mohemeen Ahmed:
+As Amel mentioned, we were able to split the work out pretty evenly
+for the assignment. For runserver, Amel was driving the programming
+but I helped out with adapting it as well as configuring the argparse
+to make sure it was working properly. With the .py files,
+I drove the error handling for reg3.py and then navigated accessing the
+queries and helping fix bugs while Amel drove programming the reg3.py.
+However, while working on .py files we still worked on them together
+so if Amel was coding, I would give suggestions/inputs if something
+wasnt working properly, and Amel would make those edits. Then for the 
+HTML files, I was driving for regdetails, classoverviews,
+and the error.html, as I have some previous experience workign with HTML,
+but Amel still helped navigate and provide suggestions/fix errors
+on formatting that wasnt working properly. I created the tables and the
+correct placement of all inputs and then I also wrote the testregoverviews.python
+file. Then, after wtiting everything out, we worked on getting rid of all
+of our bugs together and consulting Ed as necessary. 
+
 A description of the help that you received from people other
 than the course instructors while doing the assignment. Your
 description must consist of lines of the form "aspect of your
@@ -37,7 +55,7 @@ assignment solution: people from whom you received help." Write "None"
 to indicate that you received no help from other people other than
 the course instructors.
 
-[Enter your reply here.]
+None
 
 A description of the written sources of information other than the
 lecture material that you used while doing the assignment. Your
