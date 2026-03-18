@@ -106,7 +106,19 @@ An indication of how much time you spent doing the assignment.
 Your assessment of the assignment: Did it help you to learn? What did
 it help you to learn? Do you have any suggestions for improvement? Etc.
 
-[Enter your reply here.]
+We felt that the assignment helped us learn a lot about 3-tiered 
+applications! Prior to this course, we had either little or no 
+experience in this area. However, this project helped us understand 
+how the frontend, backend, and database all connect to create a 
+unified application. Specifically about frontend, we learned how 
+to implement different parts of the user interface including tables, 
+headers, etc. For the backend, we learned what Flask was and how 
+to use methods to extract data from the database, and ultimately 
+present that information to the front end. Ultimately, we learned
+what files go into such an application and how they all tie 
+together to display information on a web browser! Overall, we
+really enjoyed this assignment and felt like we learned a lot.
+We do not have any suggestions for improvement.
 
 (Optionally) Any information that will help us to grade your work in
 the most favorable light. In particular you must describe all known
